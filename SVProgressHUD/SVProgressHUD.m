@@ -611,7 +611,7 @@ static const CGFloat SVProgressHUDUndefinedProgress = -1;
         for (UIWindow *window in frontToBackWindows){
             BOOL windowOnMainScreen = window.screen == UIScreen.mainScreen;
             BOOL windowIsVisible = !window.hidden && window.alpha > 0;
-            BOOL windowLevelNormal = window.windowLevel == UIWindowLevelNormal;
+            BOOL windowLevelNormal = window.windowLevel < UIWindowLevelStatusBar;
             
             if (windowOnMainScreen && windowIsVisible && windowLevelNormal) {
                 [window addSubview:self.overlayView];
